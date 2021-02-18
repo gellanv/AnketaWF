@@ -16,7 +16,6 @@ namespace DZ4_4
 {
     public partial class Form1 : Form
     {
-
         List<Person> lstPerson = new List<Person>();
         string nameFoto = "";
         public Form1()
@@ -38,7 +37,6 @@ namespace DZ4_4
             if ((!Char.IsLetter(e.KeyChar)) && e.KeyChar != 8)
                 e.Handled = true;
         }
-
         private void TextBoxEmail_Validated(object sender, EventArgs e)
         {
             string emailPattern = @"^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$";
@@ -80,7 +78,6 @@ namespace DZ4_4
         {
             PictureBox1.Image = Image.FromFile(@"..\..\foto\fotocap.jpg");
             try { 
-
                     for (int i = 0; i < lstPerson.Count; i++)
                     {
                         if ((lstPerson[i].surname + " " + lstPerson[i].name) == ListBox1.SelectedItem.ToString())
@@ -140,7 +137,6 @@ namespace DZ4_4
             nameFoto = "";
             PictureBox1.Image = Image.FromFile(@"..\..\foto\fotocap.jpg");
         }
-
         private void ButtonDell_Click(object sender, EventArgs e)
         {
             int tem = Convert.ToInt32(LabelNumber.Text);
@@ -273,7 +269,6 @@ namespace DZ4_4
                 nameFoto = newfilePath;                
             }
         }
-
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             WriteText("ankets.txt");
